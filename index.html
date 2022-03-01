@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LSP导航</title>
+    <link rel="stylesheet" href="./css/index.css">
+	<link rel="shortcut icon" href="images/title.png"/>
+	<style>
+		body{
+    background-image: url("/images/body.jpg");
+	font-family: 'Microsoft YaHei UI',arial,sans-serif;
+    font-size: 13px;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#logo{
+    width: 280px;
+    height: 100px;
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#search-bar{
+    margin-top: 25px;
+    width: 600px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#search-bar input {
+    width: 580px;
+    height: 25px;
+    padding: 9px 10px;
+	font-family: 'Microsoft YaHei UI',arial,sans-serif;
+    font-size: 15px;
+    color: #555;
+    border: none;
+    background: #fff;
+    overflow: hidden;
+    outline:none;
+    vertical-align: middle;
+    box-shadow: 1px 1px 3px rgb(160,160,160);
+	border-radius: 2px;
+}
+
+#search-bar button {
+	margin-top: 20px;
+	margin-left: 20px;
+    width: 105px;
+    height: 35px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 15px;
+	font-weight: bold;
+	color: rgb(100,100,100);
+    border: none;
+    overflow: hidden;
+    vertical-align: middle;
+    outline: none;
+    cursor: pointer;
+	border-radius: 2px;
+    background-color: rgb(255,255,255);
+    box-shadow: 0px 0px 1px rgb(160,160,160);
+}
+
+#search-bar button:hover{
+    background-color: rgb(240,240,240);
+    box-shadow: 0px 0px 3px rgb(160,160,160);
+}
+
+#nav-panel{
+    margin-top: 20px;
+    margin-bottom: 100px;
+    width: 840px;
+    height: 485px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 30px;
+    padding-top: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid rgb(210,210,210);
+    border-radius: 10px;
+}
+
+.nav-panel-line{
+    clear: both;
+    width: 810px;
+    height:1px;
+    background-color: rgb(245,245,245);
+}
+
+.nav-panel-item {
+    float: left;
+    display: block;
+    height: 40px;
+    width: 160px;
+    border: 1px solid transparent;
+    text-decoration: none;
+    color: #333;
+}
+
+.nav-panel-item:hover
+{
+    background-color: #F7F7F7;
+}
+
+.nav-panel-item-img{
+    float: left;
+    margin-top: 12px;
+    margin-left: 15px;
+}
+
+.nav-panel-item-txt {
+    float: left;
+    margin-left: 5px;
+    line-height: 40px;
+    height: 40px;
+}
+
+	</style>
+    <script>
+        //LISTEN ENTER KEYDOWN EVENT
+        document.onkeydown = function(e){
+            if(!e){
+                e = window.event;
+            }
+            if((e.keyCode || e.which) == 13){
+                do_search();
+            }
+        }
+
+        //DO SEARCH EVENT
+        function do_bing_search() {
+            var search_txt = document.getElementById("search-bar-input").value;
+            if (search_txt == "") {
+                alert("search text is empty ! ");
+                return false;
+            }
+            var search_url = "https://www.baidu.com/s?wd=" + encodeURIComponent(search_txt);
+            window.open(search_url);
+        }
+    </script>
+</head>
+<body>
+
+<!---------------------------------------------------------------------------------------------------->
+
+<div id="logo">
+    <img src="./images/Logo.png" alt="tojohnonly">
+</div>
+
+<!---------------------------------------------------------------------------------------------------->
+<div id="search-bar" style="text-align:center">
+    <input id="search-bar-input" autofocus="autofocus"  onkeydown="on_enter_key()" type="text" placeholder="search everything ..." autocomplete="off">
+	<button onclick="do_bing_search()">百度一下</button><a class="close"></a>
+</div>
+
+<!---------------------------------------------------------------------------------------------------->
+<div id="nav-panel">
+
+    <a class="nav-panel-item" title="百度网盘不限速下载" href="https://wiki.shuma.ink/" target="_blank">
+    <img src="./images/web_icons/Bilibili.png" alt="Google" height="16" width="16" class="nav-panel-item-img">
+    <div class="nav-panel-item-txt">数码小站</div>
+    </a>
+
+    <a class="nav-panel-item" title="公众号“小木盒”白嫖网页版加速码" href="https://kinhdown.com/" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="Wikipedia" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">KinhDown</div>
+    </a>
+
+    <a class="nav-panel-item" title="匿名免费大文件传输工具" href="https://ftpod.cn/#/" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="Dictionary" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">小麦云链</div>
+    </a>
+
+    <a class="nav-panel-item" title="IDM破解版下载" href="http://www.qiuquan.cc/download/idm.html" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="Blog" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">IDM破解版</div>
+    </a>
+
+    <a class="nav-panel-item" title="正经追番看剧收藏这个就够了" href="http://www.549.tv/#" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="Baidu" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">影视森林（导航）</div>
+    </a>
+
+    <!----------------------------------------------2------------------------------------------------------>
+    <div class="nav-panel-line"></div>
+
+    <a class="nav-panel-item" title="自由的小说阅读网站" href="https://www.po18x.vip/" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="InfoQ" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">PO18脸红心跳</div>
+    </a>
+
+    <a class="nav-panel-item" title="好用的磁力链接搜索引擎" href="https://bt1207di.xyz/" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="CBlog" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">BT1207</div>
+    </a>
+
+    <a class="nav-panel-item" title="全银河系资源最丰富的种子搜索网站" href="https://skrbtdi.xyz/" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="Toutiao" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">SkrBT</div>
+    </a>
+
+    <a class="nav-panel-item" title="强大的种子磁力搜索引擎" href="https://tellme.pw/btsow" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="Hackers" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">BTSOW磁力</div>
+    </a>
+
+    <a class="nav-panel-item" title="你的線上日本成人影片情報站" href="https://avmoo.sbs/" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="Stack" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">AVMOO</div>
+    </a>
+
+    <!----------------------------------------------3------------------------------------------------------>
+    <div class="nav-panel-line"></div>
+
+    <a class="nav-panel-item" title="日本成人影视数据库" href="https://www.buscdn.xyz" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="ToDo" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">JavBus</div>
+    </a>
+	
+    <a class="nav-panel-item" title="JavLibrary 是一个线上日本成人影片图书馆" href="https://www.o58c.com/cn/" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="Tmtpost" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">JavLibrary</div>
+    </a>
+	
+    <a class="nav-panel-item" title="全球最大的色情影片分享网站之一" href="https://cn.pornhub.com" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="Cnbeta" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">Pornhub</div>
+    </a>
+
+    <a class="nav-panel-item" title="免费成人视频" href="https://www.xvideos.com" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="Sspai" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">Xvideos</div>
+    </a>
+
+    <a class="nav-panel-item" title="免费国产视频在线" href="http://91porn.com" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="iFanr" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">91Porn</div>
+    </a>
+	
+	<!-----------------------------------------------4----------------------------------------------------->
+    <div class="nav-panel-line"></div>
+
+    <a class="nav-panel-item" title="H动漫 里番在线" href="https://hanime1.me" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="Github" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">hanime1</div>
+    </a>
+
+    <a class="nav-panel-item" title="里番、漫画、3D、游戏下载（解压码ANMAXJP）" href="http://m.anmaxjp.com/" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="V2EX" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">ANMAXJP</div>
+    </a>
+	
+    <a class="nav-panel-item" title="里番在线" href="https://ecchi100.xyz/" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="Engadget" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">里番在线</div>
+    </a>
+	
+    <a class="nav-panel-item" title="每月新番下载" href="https://mikanani.me/" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="IThome" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">蜜桔计划</div>
+    </a>
+
+    <a class="nav-panel-item" title="最新的ACG资讯 分享同人动漫的快乐" href="https://www.hacg.cat" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="Map" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">琉璃神社</div>
+    </a>
+	
+    <!----------------------------------------------5------------------------------------------------------>
+    <div class="nav-panel-line"></div>
+
+    <a class="nav-panel-item" title="哔咔漫画官网" href="https://www.picacomic.com/" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="OneDrive" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">哔咔漫画</div>
+    </a>
+
+    <a class="nav-panel-item" title="H漫画、H动漫在线" href="https://18comic.vip/" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="Gmail" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">禁漫天堂</div>
+    </a>
+
+    <a class="nav-panel-item" title="专注于分享汉化本子" href="https://www.hentaicomic.ru/" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="Outlook" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">绅士漫画</div>
+    </a>
+
+    <a class="nav-panel-item" title="E-hentai镜像网站" href="https://nhentai.net/" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="Qmail" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">nhentai</div>
+    </a>
+
+    <a class="nav-panel-item" title="免费韩漫且更新速度不错" href="https://rouman01.xyz" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="BaiDisk" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">肉漫屋</div>
+    </a>
+
+    <!--------------------------------------------6-------------------------------------------------------->
+    <div class="nav-panel-line"></div>
+
+    <a class="nav-panel-item" title="Zzzfun动漫视频网" href="http://www.zzzfun.com/" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="Youtube" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">zzzfun</div>
+    </a>
+
+    <a class="nav-panel-item" title="在线动画 动漫下载" href="https://www.agemys.com/" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="Twitch" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">AGE动漫</div>
+    </a>
+
+    <a class="nav-panel-item" title="DLsite音色在线" href="https://www.asmr.one" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="Bilibili" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">ASMR online</div>
+    </a>
+
+    <a class="nav-panel-item" title="福利姬图片在线观看" href="https://asiantolick.com/" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="CBlog" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">福利姬</div>
+    </a>
+
+    <a class="nav-panel-item" title="多网站套图分享" href="https://www.ku137.net/" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="Toutiao" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">美女写真网</div>
+    </a>
+
+    <!---------------------------------------------7------------------------------------------------------->
+    <div class="nav-panel-line"></div>
+	
+    <a class="nav-panel-item" title="在线套图观看" href="https://www.cosersets.com/1/main" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="InfoQ" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">Cosersets</div>
+    </a>
+		
+    <a class="nav-panel-item" title="多站合一音乐搜索、在线试听下载" href="http://www.musictool.top/" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="Reuters" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">音乐搜索器</div>
+    </a>
+	
+    <a class="nav-panel-item" title="以图搜女优" href="https://xslist.org" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="BBC" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">Xslist</div>
+    </a>
+
+    <a class="nav-panel-item" title="翻墙 10元130G" href="https://www.mojie.cyou" target="_blank">
+        <img src="./images/web_icons/Bilibili.png" alt="VOA" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">魔戒</div>
+    </a>
+
+    <a class="nav-panel-item" title="Steam官网" href="https://www.epicgames.com" target="_blank">
+        <img src="./images/web_icons/Steam.png" alt="Steam" height="16" width="16" class="nav-panel-item-img">
+        <div class="nav-panel-item-txt">steam</div>
+    </a>
+	
+	</div>
+<div>
+	<p align="center">网站打不开请挂上网工具，还是打不开就是网站失效</p>
+	<p align="center">导航仅对网址进行收集，不一定是最全但一定是最好用的</p>
+	<p align="center">本站内容源自互联网，如有内容侵犯了你的权益，请联系删除相关内容，联系邮箱：Aurtox5411@gmail.com</p>
+</div>
+</body>
+</html>
